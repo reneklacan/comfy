@@ -1,7 +1,7 @@
 # Replace repo url with the repository url for your Jumpstart Pro application
 services:
   - type: web
-    repo: https://github.com/GITHUB_USERNAME/GITHUB_REPOSITORY # Replace this url
+    repo: https://github.com/reneklacan/comfy
     name: rails
     env: ruby
     buildCommand: "./bin/render-build.sh"
