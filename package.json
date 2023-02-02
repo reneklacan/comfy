@@ -37,5 +37,9 @@
   "scripts": {
     "build:css": "tailwindcss --postcss --minify -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css",
     "build": "node esbuild.config.mjs"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0",
+    "vite-plugin-ruby": "^3.1.2"
   }
 }
