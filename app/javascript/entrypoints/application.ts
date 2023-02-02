@@ -1,14 +1,19 @@
 import { createApp } from 'vue'
-import App from '../components/App.vue'
+import { createPinia } from 'pinia'
 
-createApp(App).mount('#app')
+import App from '@/components/App.vue'
+
+const pinia = createPinia()
+const app = createApp(App)
+
+app.use(pinia)
+app.mount('#app')
 
 // To see this message, add the following to the `<head>` section in your
 // views/layouts/application.html.erb
 //
 //    <%= vite_client_tag %>
 //    <%= vite_javascript_tag 'application' %>
-console.log('Vite ⚡️ Rails')
 
 // If using a TypeScript entrypoint file:
 //     <%= vite_typescript_tag 'application' %>
