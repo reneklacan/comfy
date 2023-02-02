@@ -118,13 +118,12 @@ if File.exist?("config/jumpstart/Gemfile")
 end
 
 # We recommend using strong migrations when your app is in production
-#gem "strong_migrations", "~> 0.7.6"
+# gem "strong_migrations", "~> 0.7.6"
 
 # custom dependencies
 
-gem 'vite_rails'
+gem "vite_rails"
 
 group :test do
-  gem 'rspec-rails'
+  gem "rspec-rails"
 end
-
