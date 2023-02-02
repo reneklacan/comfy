@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="Progress" class="m-4">
+  <nav aria-label="Progress" class="w-full">
     <ol role="list" class="divide-y divide-gray-300 rounded-md border border-gray-300 md:flex md:divide-y-0">
       <li v-for="(step, stepIdx) in steps" :key="step.name" class="relative md:flex md:flex-1">
         <a v-if="step.status === 'complete'" :href="step.href" class="group flex w-full items-center">
