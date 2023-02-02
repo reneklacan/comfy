@@ -147,4 +147,6 @@ Rails.application.routes.draw do
 
   # Public marketing homepage
   root to: "static#index"
+
+  get "order" => "order#index"
 end
