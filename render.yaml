@@ -7,6 +7,7 @@ services:
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
     region: frankfurt
+    plan: free
     envVars:
       - key: RAILS_MASTER_KEY
         sync: false
