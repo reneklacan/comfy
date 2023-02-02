@@ -2,10 +2,11 @@
 services:
   - type: web
     repo: https://github.com/reneklacan/comfy
-    name: rails
+    name: comfy-web
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
+    region: frankfurt
     envVars:
       - key: RAILS_MASTER_KEY
         sync: false
@@ -20,12 +21,15 @@ services:
           property: connectionString
 
   - type: redis
-    name: redis
-    ipAllowList: [] # only allow internal connections
-    plan: free # optional (defaults to starter)
-    maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)
+    name: comfy-redis
+    ipAllowList: []
+    plan: free
+    maxmemoryPolicy: volatile-lru
+    region: frankfurt
 
 databases:
-  - name: postgres
-    ipAllowList: [] # only allow internal connections
+  - name: comfy-postgres
+    ipAllowList: []
+    region: frankfurt
+    plan: free
 
