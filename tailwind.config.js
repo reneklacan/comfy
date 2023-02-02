@@ -15,6 +15,7 @@ module.exports = {
   content: [
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
+    './app/javascript/**/*.vue',
     './app/views/**/*.erb',
     './app/views/**/*.haml',
     './app/views/**/*.slim',
@@ -36,7 +37,7 @@ module.exports = {
         "code-600": "#3c455b",
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
   },

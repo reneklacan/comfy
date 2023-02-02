@@ -1,13 +1,18 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import App from '@/components/App.vue'
+import OrderApp from '@/components/order/App.vue'
+import Navbar from '@/components/Navbar.vue'
 
-const pinia = createPinia()
-const app = createApp(App)
+if (document.querySelector('#order-app')) {
+  const orderStore = createPinia()
+  const orderApp = createApp(OrderApp)
+  orderApp.use(orderStore)
+  orderApp.mount('#order-app')
+}
 
-app.use(pinia)
-app.mount('#app')
+const navbarApp = createApp(Navbar)
+navbarApp.mount('#navbar-app')
 
 // To see this message, add the following to the `<head>` section in your
 // views/layouts/application.html.erb
