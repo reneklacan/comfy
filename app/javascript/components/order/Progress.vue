@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
+import Service from './Service.vue'
 import Location from './Location.vue'
 import Provider from './Provider.vue'
 import Detail from './Detail.vue'
@@ -8,11 +9,12 @@ import Payment from './Payment.vue'
 import Summary from './Summary.vue'
 
 const steps = [
+  { name: 'Služba', href: '#', component: Service },
   { name: 'Miesto', href: '#', component: Location },
-  { name: 'Poskytovatel', href: '#', component: Provider },
+  { name: 'Poskytovateľ', href: '#', component: Provider },
   { name: 'Detail', href: '#', component: Detail },
-  { name: 'Platba', href: '#', component: Payment },
-  { name: 'Suhrn', href: '#', component: Summary },
+  // { name: 'Platba', href: '#', component: Payment },
+  { name: 'Súhrn', href: '#', component: Summary },
 ]
 
 const currentStepIndex = ref(0)
@@ -28,7 +30,7 @@ const nextStep = () => {
 
 <template>
   <div class="w-full">
-    <div class="border-b border-gray-200 w-full">
+    <div class="border-b border-gray-200 w-full mb-10">
       <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
         <a
           v-for="(step, stepIndex) in steps"
@@ -40,6 +42,9 @@ const nextStep = () => {
         >{{ step.name }}</a>
       </nav>
     </div>
-    <component :is="currentTabComponent" @next-step="nextStep" />
+    <component
+      :is="currentTabComponent"
+      @next-step="nextStep"
+    />
   </div>
 </template>

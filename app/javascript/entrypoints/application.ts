@@ -1,13 +1,22 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 import OrderApp from '@/components/order/App.vue'
 import Navbar from '@/components/Navbar.vue'
+
+const googleMapsApiKey = 'AIzaSyDLlOUvgGKezcKsR_OxHN_G8w-bXK4_gn8'
 
 if (document.querySelector('#order-app')) {
   const orderStore = createPinia()
   const orderApp = createApp(OrderApp)
   orderApp.use(orderStore)
+  orderApp.use(VueGoogleMaps, {
+    load: {
+        key: googleMapsApiKey,
+        libraries: "places",
+    },
+  })
   orderApp.mount('#order-app')
 }
 

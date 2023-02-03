@@ -2,6 +2,7 @@
   "name": "jumpstart-app",
   "private": true,
   "dependencies": {
+    "@fawmi/vue-google-maps": "0.9.67",
     "@gorails/ninja-keys": "^1.2.1",
     "@headlessui/vue": "^1.7.8",
     "@heroicons/vue": "^2.0.14",
